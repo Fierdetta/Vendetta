@@ -7,7 +7,7 @@ console.log("Hello from Vendetta!");
     } catch (ex) {
         const dialog = [
             "Failed to load Vendetta!\n",
-            `Build Number: ${nativeModuleProxy.InfoDictionaryManager.Build}`,
+            `Build Number: ${window.nativeModuleProxy ? window.nativeModuleProxy.InfoDictionaryManager.Build : window.DiscordNative.app.getVersion()}`,
             `Vendetta: ${__vendettaVersion}`,
             ex?.stack || ex.toString(),
         ].join("\n");
